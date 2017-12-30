@@ -2,9 +2,6 @@ FROM node:boron
 
 RUN apt-get update
 
-RUN apt-get install -y --allow build-essential wget git
-
-# RUN cd / && git clone https://github.com/oferzi23/react-example.git
 RUN mkdir /example-app
 
 ADD index.js /example-app/
