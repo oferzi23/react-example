@@ -1,12 +1,12 @@
-FROM ubuntu:16.04
+FROM node:boron
 
 RUN apt-get update
 
-RUN apt-get install -y --force-yes build-essential wget git
+RUN apt-get install -y --allow build-essential wget git
 
-RUN cd /tmp && wget https://nodejs.org/download/release/v6.12.2/node-v6.12.2-linux-x64.tar.gz
+# RUN cd /tmp && wget https://nodejs.org/download/release/v6.12.2/node-v6.12.2-linux-x64.tar.gz
 
-RUN cd /opt && sudo tar xzvf /tmp/node-v6.12.2-linux-x64.tar.gz
+# RUN cd /opt && tar xzvf /tmp/node-v6.12.2-linux-x64.tar.gz
 
 ENV PATH $PATH:/opt/node-v6.12.2-linux-x64/bin
 
