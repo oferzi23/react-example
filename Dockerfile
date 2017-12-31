@@ -7,6 +7,7 @@ RUN mkdir /example-app
 ADD index.js /example-app/
 ADD index.html /example-app/
 ADD .eslintrc /example-app/
+ADD webpack.config.js /example-app/
 ADD package.json /example-app/
 ADD assets /example-app/
 ADD test /example-app/
