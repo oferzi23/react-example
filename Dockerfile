@@ -8,6 +8,8 @@ ADD index.js /example-app/
 ADD index.html /example-app/
 ADD .eslintrc /example-app/
 ADD package.json /example-app/
+ADD assets /example-app/
+ADD test /example-app/
 ADD app /example-app
 
 EXPOSE 8080
