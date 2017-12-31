@@ -6,7 +6,7 @@ RUN mkdir /example-app
 
 ADD index.js /example-app/
 ADD index.html /example-app/
-ADD package.json /example-app
+ADD package.json /example-app/
 ADD app /example-app
 
 EXPOSE 8080
