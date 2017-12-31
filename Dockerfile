@@ -6,6 +6,7 @@ RUN mkdir /example-app
 
 ADD index.js /example-app/
 ADD index.html /example-app/
+ADD .eslintrc /example-app/
 ADD package.json /example-app/
 ADD app /example-app
 
