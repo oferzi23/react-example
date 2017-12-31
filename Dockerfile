@@ -10,7 +10,7 @@ ADD app /example-app
 
 EXPOSE 8080
 
-RUN cd /react/example 
+RUN cd /example-app
 
 RUN npm run setup 
 
