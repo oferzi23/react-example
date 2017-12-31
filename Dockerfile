@@ -14,7 +14,7 @@ ADD assets /example-app/
 ADD test /example-app/
 ADD app /example-app
 
-RUN ls test
+RUN cd /example-app && ls test
 EXPOSE 8080
 
 RUN cd /example-app && npm run setup 
