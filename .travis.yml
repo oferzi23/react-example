@@ -13,7 +13,7 @@ jobs:
       script: npm run setup
 
     - stage: build docker image
-      script: docker build -t oferzi23/react-example .
+      install: docker build -t oferzi23/react-example .
       script: docker ps -a
 
     - stage: run docker image
