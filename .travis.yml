@@ -5,9 +5,16 @@ language: node_js
 services:
   - docker
 
-before_install:
-  - docker build -t oferzi23/react-example .
-  - docker ps -a
+jobs:
+  include:
+    - stage: test      
+      before_install:
+        - ls -lR
+      script: npm run setup
 
-script:
-  - docker run -d -p 8080:8080 oferzi23/react-example 
+    - stage: build docker image
+      script: docker build -t oferzi23/react-example .
+      script: docker ps -a
+
+    - stage: run docker image
+      script: docker run -d -p 8080:8080 oferzi23/react-example 
