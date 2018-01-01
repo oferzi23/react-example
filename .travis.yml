@@ -14,8 +14,18 @@ jobs:
       script: npm run setup
 
     - stage: build docker image
-      install: docker build -t oferzi23/react-example .
-      script: docker ps -a
+      before_install:
+        - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+      install: 
+       - docker build -t oferzi23/react-example .
+       
+      script: docker images -a
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+          docker push oferzi23/react-example;
+          fi
 
-    - stage: run docker image
-      script: docker run -d -p 8080:8080 oferzi23/react-example 
+    - stage: deploy
+      script: echo "deployment"
+     
