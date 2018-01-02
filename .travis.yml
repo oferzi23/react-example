@@ -8,18 +8,25 @@ language: node_js
 node_js: 
   - "6"
 
+before_install:
+  - sudo apt install jq
+
+env: 
+  - BUILD_VERSION="$(cat package.json | jq -r '.version')-${TRAVIS_BUILD_NUMBER}"
+
 jobs:
   include:
     - stage: test      
       before_install:
         - ls -lR
+        - echo "Testing Version ${BUILD_VERSION}"
       script: npm run setup
 
     - stage: build docker image
       before_install:
         - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
       install: 
-       - docker build -t oferzi23/react-example .
+       - docker build -t "oferzi23/react-example:$BUILD_VERSION" .
        
       script: docker images -a
       after_success:
