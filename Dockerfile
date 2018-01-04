@@ -10,7 +10,8 @@ WORKDIR /example-app
 
 ADD  ./* /example-app/
 
-RUN  ls  -lR
+RUN npm install
+
 EXPOSE 8080
 
 CMD ["sudo", "npm", "run", "dev" ]
