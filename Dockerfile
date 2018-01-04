@@ -10,7 +10,7 @@ WORKDIR /example-app
 
 ADD  ./* /example-app/
 
-RUN cd /example-app && ls  -lR
+RUN  ls  -lR
 EXPOSE 8080
 
-CMD [ "npm", "run", "dev" ]
+CMD ["sudo", "npm", "run", "dev" ]

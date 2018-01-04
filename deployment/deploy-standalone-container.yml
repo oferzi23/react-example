@@ -1,0 +1,19 @@
+---
+- hosts: "{{docker-host}}"
+
+  vars_prompt:
+    - name: "owner"
+      prompt: "Enter Owner"
+      private: no
+
+    - name: "repository"
+      prompt: "Enter Repository Name"
+      private: no
+
+    - name: "tag"
+      prompt: "Enter Tag"
+      private: no
+    
+  tasks:
+
+  
