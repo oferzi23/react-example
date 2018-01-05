@@ -2,16 +2,20 @@ FROM node:boron
 
 RUN node --version && npm --version
 
-RUN mkdir /example-app
+COPY app /example-app/app
+COPY assets /example-app/assets
+COPY build /example-app/build
+COPY index* /example-app/
+COPY .eslintrc /example-app/
+COPY package.json /example-app/
+COPY .babelrc /example-app/
+COPY webpack.config.js /example-app/
 
 WORKDIR /example-app
 
-# RUN git clone https://github.com/oferzi23/react-example.git /example-app
-
-ADD  ./* /example-app/
+RUN ls -la
 
 RUN npm install
-
 EXPOSE 8080
 
-CMD [ "npm", "run", "dev" ]
+CMD npm start
