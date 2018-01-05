@@ -35,6 +35,6 @@ jobs:
           docker push oferzi23/react-example;
           fi
 
-    - stage: deploy
-      script: echo "deployment"
+    # - stage: deploy
+      # script: echo "deployment"
      
