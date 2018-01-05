@@ -1,5 +1,5 @@
 ---
-- hosts: "{{docker-host}}"
+- hosts: localhost
 
   vars_prompt:
     - name: "owner"
@@ -16,4 +16,10 @@
     
   tasks:
 
-  
+  - name: "react-example container"
+    docker:
+      name: test
+      image: "{{owner}}/{{repository}}:tag"
+      state: started
+      ports: 
+        - "8080:8080"
