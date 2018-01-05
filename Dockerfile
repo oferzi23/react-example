@@ -4,7 +4,6 @@ RUN node --version && npm --version
 
 COPY app /example-app/app
 COPY assets /example-app/assets
-COPY build /example-app/build
 COPY index* /example-app/
 COPY .eslintrc /example-app/
 COPY package.json /example-app/
